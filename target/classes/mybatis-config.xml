@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<setting name="cacheEnabled" value="true" />
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="aggressiveLazyLoading" value="false" />
+	</settings>
+
+	<typeAliases>
+		<package name="cn.edu.cqu.cht.model" />
+	</typeAliases>
+	<!-- 配置pagehelper -->
+	<plugins>
+		<!-- com.github.pagehelper为PageHelper类所在包名 -->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<!-- 使用下面的方式配置参数，后面会有所有的参数介绍 -->
+		</plugin>
+	</plugins>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+				<property name="" value="" />
+			</transactionManager>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/express_system?characterEncoding=utf8&amp;useSSL=true" />
+				<property name="username" value="root" />
+				<property name="password" value="1234" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="cn/edu/cqu/cht/mapper/BaseMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/CourierMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/CourierOrderMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/OrderlistMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/PlacePriceMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/UserMapper.xml" />
+	</mappers>
+</configuration>

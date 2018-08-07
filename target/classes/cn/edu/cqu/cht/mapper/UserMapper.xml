@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.cqu.cht.mapper.UserMapper">
+	<resultMap type="cn.edu.cqu.cht.model.User" id="userMap">
+		<id property="userId" column="user_id"/>
+		<result property="userName" column="user_name"/>
+		<result property="userRealName" column="user_real_name"/>
+		<result property="phoneNum" column="phone_num"/>
+		<result property="email" column="email"/>
+		<result property="picture" column="picture"/>
+		<result property="addr1" column="addr1"/>
+		<result property="addr2" column="addr2"/>
+		<result property="addr3" column="addr3"/>
+		<result property="historyAddr" column="history_addr"/>
+	</resultMap>
+	
+	<select id="selectByUserId" resultMap="userMap">
+		select * from user where user_id = #{userId}
+	</select>	
+	<select id="selectAllUser" resultType="cn.edu.cqu.cht.model.User">
+		select * from user
+	</select>
+	
+	<insert id="insertUser">
+		insert into user(
+			user_id,user_name,user_real_name,phone_num,email,picture,addr1,addr2,addr3,history_addr)
+		values(
+			#{userId},#{userName},#{userRealName},#{phoneNum},#{email},#{picture},#{addr1},#{addr2},#{addr3},#{historyAddr})
+	</insert>
+	
+	<update id="updateByUserId">
+		update user
+		set user_name = #{userName},
+			user_real_name = #{userRealName},
+			phone_num = #{phoneNum},
+			email = #{email},
+			picture = #{picture},
+			addr1 = #{addr1},
+			addr2 = #{addr2},
+			addr3 = #{addr3},
+			history_addr = #{historyAddr}
+		where user_id = #{userId}
+	</update>
+	
+	<delete id="deleteByUserId">
+		delete from user where user_id = #{userId}
+	</delete>
+</mapper>

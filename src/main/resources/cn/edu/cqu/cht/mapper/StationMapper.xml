@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.cqu.cht.mapper.StationMapper">
+	<resultMap type="cn.edu.cqu.cht.model.Station" id="stationMap">
+		<id property="stationId" column="station_id"/>
+		<result property="stationName" column="station_name"/>
+		<result property="province" column="province"/>
+		<result property="city" column="city"/>
+		<result property="area" column="area"/>
+		<result property="address" column="address"/>
+		<result property="principal" column="principal"/>
+		<result property="phone" column="phone"/>
+	</resultMap>
+	
+	<select id="selectByStationId" resultMap="stationMap">
+		select * from station where station_id = #{stationId}
+	</select>
+	<select id="selectAllStation" resultType="cn.edu.cqu.cht.model.Station">
+		select * from station
+	</select>
+	<select id="findMyOrders" resultType="cn.edu.cqu.cht.model.Orderlist">
+		select * from orderlist o 
+			inner join station_order so on so.order_id = o.order_id 
+			inner join station s on s.station_id = so.station_id 
+    	where s.station_id = #{stationId} order by o.time desc
+	</select>
+	<select id="selectAllUnpassStation" resultType="cn.edu.cqu.cht.model.Station" >
+		select * from station where station_state = 0
+	</select>
+	
+	<insert id="insertStation">
+		insert into station(
+			station_id,station_name,province,city,area,address,principal,phone)
+		values(
+			stationId,stationName,province,city,area,address,principal,phone)
+	</insert>
+	
+	<update id="updateByStationId">
+		update station
+		set station_name = #{stationName},
+			province = #{province},
+			city = #{city},
+			area = #{area},
+			address = #{address},
+			principal = #{principal},
+			phone = #{phone}
+		where station_id = #{stationId}
+	</update>
+	
+	<update id="passStation">
+		update station set station_state = 1 where station_id = #{stationId}
+	</update>
+	
+	<delete id="deleteByStationId">
+		delete from station where station_id = #{stationId}
+	</delete>
+</mapper>

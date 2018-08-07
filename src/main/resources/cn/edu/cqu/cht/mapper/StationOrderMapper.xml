@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.cqu.cht.mapper.StationOrderMapper">
+	<resultMap type="cn.edu.cqu.cht.model.StationOrder" id="stationOrderMap">
+		<id property="stationId" column="station_id"/>
+		<id property="orderId" column="order_id"/>
+		<result property="salary" column="salary"/>
+		<result property="orderState" column="order_state"/>
+		<result property="time" column="time"/>
+	</resultMap>
+	
+	<select id="selectAllStationOrder" resultType="cn.edu.cqu.cht.model.StationOrder">
+		select * from station_order
+	</select>
+	<select id="selectByStationId" resultType="cn.edu.cqu.cht.model.StationOrder">
+		select * from station_order where station_id = #{stationId} order by time desc
+	</select>
+	<select id="selectByOrderId" resultType="cn.edu.cqu.cht.model.StationOrder">
+		select * from station_order where order_id = #{orderId} order by time desc
+	</select>
+	<select id="selectByStationIdAndOrderId" resultMap="stationOrderMap">
+		select * from station_order where station_id = #{stationId} order_id = #{orderId}
+	</select>
+	
+	<insert id="insertStationOrder">
+		insert into station_order(
+			station_id,order_id,salary,order_state,time)
+		values(
+			#{stationId},#{orderId},#{salary},#{orderState},#{time})
+	</insert>
+	
+	<update id="updateByOrderId">
+		update station_order
+		set salary = #{salary},
+			order_state = 1
+		where order_id = #{orderId}
+	</update>
+	
+	<delete id="deleteByStationIdAndOrderId">
+		delete from station_order where station_id = #{stationId} and order_id = #{orderId}
+	</delete>
+</mapper>

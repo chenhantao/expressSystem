@@ -10,9 +10,11 @@
 	<select id="selectById" resultMap="baseMap">
 		select * from base where id = #{id}
 	</select>
+	
 	<select id="selectByAccount" resultMap="baseMap">
 		select * from base where account = #{account}
 	</select>
+	
 	<select id="selectAllBase" resultMap="baseMap">
 		select * from base
 	</select>

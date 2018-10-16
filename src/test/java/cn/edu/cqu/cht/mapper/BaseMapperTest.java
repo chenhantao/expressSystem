@@ -29,7 +29,7 @@ public class BaseMapperTest extends BaseTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void selectByAccountTest() {
 		SqlSession session=getSqlSession();
 		try {

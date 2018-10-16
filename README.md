@@ -1,10 +1,12 @@
 # expressSystem
 
 #### 项目介绍
-快递管理系统，采用SSM框架，基本成型， 还可以后续完善
+快递管理系统，采用SSM框架，基本成型，还可以后续完善
 
 #### 软件架构
 Spring+SpringMVC+mybatis
+计划加入通用mapper
+后续如若条件允许，切换为springboot
 
 
 #### 安装教程

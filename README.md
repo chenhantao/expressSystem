@@ -10,10 +10,9 @@ Spring+SpringMVC+mybatis
 
 #### 安装教程
 idea配置好Tomcat后即可启动
-eclipse同样
+eclipse JavaEE版本同样
 
 #### 使用说明
-
 
 
 #### 参与贡献

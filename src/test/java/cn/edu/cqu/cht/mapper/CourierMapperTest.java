@@ -16,7 +16,7 @@ import junit.framework.TestCase;
  */
 public class CourierMapperTest extends BaseTest {
 
-	@Test
+	//@Test
 	public void selectAllTest() {
 		SqlSession session = getSqlSession();
 		try {

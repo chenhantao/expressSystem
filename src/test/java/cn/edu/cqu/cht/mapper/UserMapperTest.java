@@ -15,7 +15,7 @@ import junit.framework.TestCase;
 
 public class UserMapperTest extends BaseTest {
 
-	@Test
+	//@Test
 	public void selectByUserIdTest() {
 		SqlSession sqlSession = getSqlSession();
 		try {
@@ -27,7 +27,7 @@ public class UserMapperTest extends BaseTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void selectAllUserTest() {
 		SqlSession session = getSqlSession();
 		try {

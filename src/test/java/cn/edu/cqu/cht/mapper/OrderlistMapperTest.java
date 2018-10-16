@@ -15,7 +15,7 @@ import junit.framework.TestCase;
 
 public class OrderlistMapperTest extends BaseTest {
 
-	@Test
+	//@Test
 	public void selectAllOrderTest() {
 		SqlSession session = getSqlSession();
 		try {

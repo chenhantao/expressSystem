@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.cqu.cht.function.MD5;
+import cn.edu.cqu.cht.function.Transform;
 import cn.edu.cqu.cht.model.Base;
 import cn.edu.cqu.cht.model.Courier;
 import cn.edu.cqu.cht.model.Station;
@@ -14,6 +15,7 @@ import cn.edu.cqu.cht.service.BaseService;
 import cn.edu.cqu.cht.service.CourierService;
 import cn.edu.cqu.cht.service.StationService;
 import cn.edu.cqu.cht.service.UserService;
+import sun.reflect.generics.tree.Tree;
 
 /**
  * @author CHT
@@ -84,21 +86,24 @@ public class RegisterController {
 			return "station/register";
 		}
 		// 分割地区
-		String[] strings1 = new String[3];
-		int num1 = 0;
-		String sAddr = request.getParameter("addr-show");
+		String[] areas = new String[3];
+        String address = request.getParameter("addr-show");
+
+        Transform.transformArea(address, areas);
+
+        /*int num1 = 0;
 		String temp = "";
 		for (int i = 0; i < sAddr.length(); i++) {
 			if (sAddr.charAt(i) != '-') {
 				temp += String.valueOf(sAddr.charAt(i));
 			} else {
-				strings1[num1] = temp;
+				areas[num1] = temp;
 				num1++;
 				temp = "";
 			}
-		}
-		if (stationService.addStation(base.getId(), request.getParameter("register_station_name"), strings1[0],
-				strings1[1], strings1[2], request.getParameter("register_addr"),
+		}*/
+		if (stationService.addStation(base.getId(), request.getParameter("register_station_name"), areas[0],
+				areas[1], areas[2], request.getParameter("register_addr"),
 				request.getParameter("register_real_name"), request.getParameter("register_phone"))) {
 			Station station = stationService.findByStationId(base.getId());
 			request.getSession().setAttribute("loginstation", station);
@@ -125,21 +130,24 @@ public class RegisterController {
 			return "courier/register";
 		}
 		// 分割地区
-		String[] strings1 = new String[3];
+		String[] areas = new String[3];
+		String address = request.getParameter("addr-show");
+
+		Transform.transformArea(address,areas);
+		/*
 		int num1 = 0;
-		String sAddr = request.getParameter("addr-show");
-		String temp = "";
-		for (int i = 0; i < sAddr.length(); i++) {
-			if (sAddr.charAt(i) != '-') {
-				temp += String.valueOf(sAddr.charAt(i));
+        String temp = "";
+		for (int i = 0; i < address.length(); i++) {
+			if (address.charAt(i) != '-') {
+				temp += String.valueOf(address.charAt(i));
 			} else {
-				strings1[num1] = temp;
+				areas[num1] = temp;
 				num1++;
 				temp = "";
 			}
-		}
+		}*/
 		if (courierService.addCourier(base.getId(), request.getParameter("register_real_name"),
-				request.getParameter("register_phone"), strings1[0], strings1[1], strings1[2])) {
+				request.getParameter("register_phone"), areas[0], areas[1], areas[2])) {
 			Courier courier = courierService.findByCourierId(base.getId());
 			request.getSession().setAttribute("logincourier", courier);
 			return "courier/courier";

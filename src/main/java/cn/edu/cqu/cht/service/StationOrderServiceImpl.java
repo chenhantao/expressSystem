@@ -24,22 +24,19 @@ public class StationOrderServiceImpl implements StationOrderService {
 	@Override
 	public List<StationOrder> findAllStationOrder(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<StationOrder> stationOrders = stationOrderMapper.selectAllStationOrder();
-		return stationOrders;
+		return stationOrderMapper.selectAllStationOrder();
 	}
 
 	@Override
 	public List<StationOrder> findByStationId(Integer stationId, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<StationOrder> stationOrders = stationOrderMapper.selectByStationId(stationId);
-		return stationOrders;
+		return stationOrderMapper.selectByStationId(stationId);
 	}
 
 	@Override
 	public List<StationOrder> findByOrderId(String orderId, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<StationOrder> stationOrders = stationOrderMapper.selectByOrderId(orderId);
-		return stationOrders;
+		return stationOrderMapper.selectByOrderId(orderId);
 	}
 
 	@Override

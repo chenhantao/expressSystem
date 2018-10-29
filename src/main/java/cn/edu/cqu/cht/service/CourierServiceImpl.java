@@ -11,7 +11,7 @@ import cn.edu.cqu.cht.mapper.CourierMapper;
 import cn.edu.cqu.cht.model.Courier;
 import cn.edu.cqu.cht.model.Orderlist;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:31:37
  * @version 1.0
@@ -25,8 +25,7 @@ public class CourierServiceImpl implements CourierService {
 	@Override
 	public List<Courier> findAllCourier(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Courier> couriers = courierMapper.selectAllCourier();
-		return couriers;
+		return courierMapper.selectAllCourier();
 	}
 
 	@Override

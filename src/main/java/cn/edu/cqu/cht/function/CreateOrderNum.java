@@ -3,7 +3,7 @@ package cn.edu.cqu.cht.function;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月9日 下午10:03:40
  * @version 1.0

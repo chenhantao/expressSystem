@@ -14,7 +14,7 @@ import cn.edu.cqu.cht.function.CalculatePrice;
 import cn.edu.cqu.cht.mapper.OrderlistMapper;
 import cn.edu.cqu.cht.model.Orderlist;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:32:00
  * @version 1.0
@@ -28,22 +28,19 @@ public class OrderlistServiceImpl implements OrderlistService {
 	@Override
 	public List<Orderlist> findAllOrders(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Orderlist> orders = orderMapper.selectAllOrder();
-		return orders;
+		return orderMapper.selectAllOrder();
 	}
 
 	@Override
 	public List<Orderlist> findActiveOrders(String province, String city, String area, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Orderlist> orders = orderMapper.selectActiveOrder(province, city, area);
-		return orders;
+		return orderMapper.selectActiveOrder(province, city, area);
 	}
 
 	@Override
 	public List<Orderlist> findByRecipientPhone(String recipientPhone, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Orderlist> orders = orderMapper.selectByRecipientPhone(recipientPhone);
-		return orders;
+		return orderMapper.selectByRecipientPhone(recipientPhone);
 	}
 
 	@Override
@@ -117,8 +114,7 @@ public class OrderlistServiceImpl implements OrderlistService {
 	@Override
 	public List<Orderlist> findByUserId(Integer userId, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Orderlist> orderlists = orderMapper.selectByUserId(userId);
-		return orderlists;
+		return orderMapper.selectByUserId(userId);
 	}
 
 }

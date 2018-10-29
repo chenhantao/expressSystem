@@ -82,24 +82,24 @@ public class UserController {
 		int num2 = 0;
 		String sAddr = request.getParameter("addr-show");
 		String rAddr = request.getParameter("addr-show2");
-		String temp = "";
+		StringBuilder temp = new StringBuilder();
 		for (int i = 0; i < sAddr.length(); i++) {
 			if (sAddr.charAt(i) != '-') {
-				temp += String.valueOf(sAddr.charAt(i));
+				temp.append(String.valueOf(sAddr.charAt(i)));
 			} else {
-				strings1[num1] = temp;
+				strings1[num1] = temp.toString();
 				num1++;
-				temp = "";
+				temp = new StringBuilder();
 			}
 		}
-		String temp2 = "";
+		StringBuilder temp2 = new StringBuilder();
 		for (int i = 0; i < rAddr.length(); i++) {
 			if (rAddr.charAt(i) != '-') {
-				temp2 += String.valueOf(rAddr.charAt(i));
+				temp2.append(String.valueOf(rAddr.charAt(i)));
 			} else {
-				strings2[num2] = temp2;
+				strings2[num2] = temp2.toString();
 				num2++;
-				temp2 = "";
+				temp2 = new StringBuilder();
 			}
 		}
 

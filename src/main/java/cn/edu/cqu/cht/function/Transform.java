@@ -7,7 +7,7 @@ package cn.edu.cqu.cht.function;
 public class Transform {
     /**
      * 根据 - 分割字符串，用于分割地区
-     * @param s 储存的地区字符串
+     * @param address 储存的地区字符串
      * @param areas 返回的分段
      */
     public static void transformArea(String address, String[] areas){

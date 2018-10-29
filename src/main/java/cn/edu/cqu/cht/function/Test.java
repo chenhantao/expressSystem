@@ -9,15 +9,14 @@ import java.util.ArrayList;
  */
 public class Test {
 	public ArrayList<String> showLogistics(String logisticsState) {
-		String temp = "";
+		StringBuilder temp = new StringBuilder();
 		ArrayList<String> logistics=new ArrayList<>();
 		for (int i = 0; i < logisticsState.length(); i++) {
 			if (logisticsState.charAt(i) != '-') {
-				temp += String.valueOf(logisticsState.charAt(i));
+				temp.append(String.valueOf(logisticsState.charAt(i)));
 			} else {
-				logistics.add(temp);
-				temp="";
-				continue;
+				logistics.add(temp.toString());
+				temp = new StringBuilder();
 			}
 		}
 		return logistics;
@@ -33,7 +32,7 @@ public class Test {
 	}
 
 	private Test() {
-	};
+	}
 	
 	public static void main(String[] args) {
 		Test test=new Test();

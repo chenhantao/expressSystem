@@ -101,15 +101,14 @@ public class OrderlistServiceImpl implements OrderlistService {
 
 	@Override
 	public ArrayList<String> showLogistics(String logisticsState) {
-		String temp = "";
+		StringBuilder temp = new StringBuilder();
 		ArrayList<String> logistics = new ArrayList<>();
 		for (int i = 0; i < logisticsState.length(); i++) {
 			if (logisticsState.charAt(i) != '-') {
-				temp += logisticsState.charAt(i);
+				temp.append(logisticsState.charAt(i));
 			} else {
-				logistics.add(temp);
-				temp = "";
-				continue;
+				logistics.add(temp.toString());
+				temp = new StringBuilder();
 			}
 		}
 		return logistics;

@@ -10,7 +10,7 @@ import com.github.pagehelper.PageHelper;
 import cn.edu.cqu.cht.mapper.UserMapper;
 import cn.edu.cqu.cht.model.User;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:32:47
  * @version 1.0
@@ -24,8 +24,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> findAllUsers(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<User> users = userMapper.selectAllUser();
-		return users;
+		return userMapper.selectAllUser();
 	}
 
 	@Override

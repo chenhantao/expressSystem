@@ -1,6 +1,6 @@
 package cn.edu.cqu.cht.function;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月11日 上午2:40:13
  * @version 1.0

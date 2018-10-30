@@ -1,5 +1,5 @@
 package cn.edu.cqu.cht.mapper;
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月3日 上午2:33:45
  * @version 1.0

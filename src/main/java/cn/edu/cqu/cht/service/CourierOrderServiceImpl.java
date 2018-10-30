@@ -10,7 +10,7 @@ import com.github.pagehelper.PageHelper;
 import cn.edu.cqu.cht.mapper.CourierOrderMapper;
 import cn.edu.cqu.cht.model.CourierOrder;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:31:10
  * @version 1.0
@@ -24,8 +24,7 @@ public class CourierOrderServiceImpl implements CourierOrderService {
 	@Override
 	public List<CourierOrder> findCourierOrderByCourierId(Integer courierId, int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<CourierOrder> courierOrders = courierOrderMapper.selectByCourierId(courierId);
-		return courierOrders;
+		return courierOrderMapper.selectByCourierId(courierId);
 	}
 
 	@Override

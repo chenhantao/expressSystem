@@ -3,7 +3,7 @@ package cn.edu.cqu.cht.function;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月9日 下午10:03:40
  * @version 1.0
@@ -12,12 +12,12 @@ public class CreateOrderNum {
 	public String init(Integer id) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 		String date = simpleDateFormat.format(new Date());
-		String num = "";
+		StringBuilder num = new StringBuilder();
 		for (int i = 0; i < 6; i++) {
-			num += String.valueOf((int) (Math.random() * 10));
+			num.append(String.valueOf((int) (Math.random() * 10)));
 		}
-		num = String.valueOf(Math.abs(Integer.valueOf(num).intValue() - id));
-		String rand = String.valueOf(num);
+		num = new StringBuilder(String.valueOf(Math.abs(Integer.valueOf(num.toString()) - id)));
+		String rand = String.valueOf(num.toString());
 		if (rand.length() == 5) {
 			rand = "0" + rand;
 		}

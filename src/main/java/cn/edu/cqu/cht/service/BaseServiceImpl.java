@@ -11,7 +11,7 @@ import cn.edu.cqu.cht.function.MD5;
 import cn.edu.cqu.cht.mapper.BaseMapper;
 import cn.edu.cqu.cht.model.Base;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:30:07
  * @version 1.0
@@ -35,8 +35,7 @@ public class BaseServiceImpl implements BaseService {
 	@Override
 	public List<Base> findAllBase(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Base> bases = baseMapper.selectAllBase();
-		return bases;
+		return baseMapper.selectAllBase();
 	}
 
 	@Override

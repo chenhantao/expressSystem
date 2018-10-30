@@ -11,7 +11,7 @@ import cn.edu.cqu.cht.mapper.StationMapper;
 import cn.edu.cqu.cht.model.Orderlist;
 import cn.edu.cqu.cht.model.Station;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月8日 上午3:39:38
  * @version 1.0
@@ -25,8 +25,7 @@ public class StationServiceImpl implements StationService {
 	@Override
 	public List<Station> findAllStations(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Station> stations = stationMapper.selectAllStation();
-		return stations;
+		return stationMapper.selectAllStation();
 	}
 
 	@Override
@@ -72,8 +71,7 @@ public class StationServiceImpl implements StationService {
 	@Override
 	public List<Station> findAllUnpassStations(int offset, int limit) {
 		PageHelper.startPage(offset, limit);
-		List<Station> list = stationMapper.selectAllUnpassStation();
-		return list;
+		return stationMapper.selectAllUnpassStation();
 	}
 
 	@Override

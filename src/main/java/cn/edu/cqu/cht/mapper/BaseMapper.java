@@ -2,7 +2,7 @@ package cn.edu.cqu.cht.mapper;
 import java.util.List;
 
 import cn.edu.cqu.cht.model.Base;
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年4月18日 上午4:31:54
  * @version 1.0
@@ -36,7 +36,7 @@ public interface BaseMapper {
 	
 	/**
 	 * 修改密码用
-	 * @param password
+	 * @param base
 	 * @return
 	 */
 	public int updateByAccount(Base base);

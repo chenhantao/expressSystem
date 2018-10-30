@@ -8,7 +8,7 @@ import cn.edu.cqu.cht.mapper.PlacePriceMapper;
 import cn.edu.cqu.cht.model.Orderlist;
 import cn.edu.cqu.cht.model.PlacePrice;
 
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月4日 下午2:32:16
  * @version 1.0

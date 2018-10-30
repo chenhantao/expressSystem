@@ -1,5 +1,5 @@
 package cn.edu.cqu.cht.model;
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月2日 上午2:44:31
  * @version 1.0

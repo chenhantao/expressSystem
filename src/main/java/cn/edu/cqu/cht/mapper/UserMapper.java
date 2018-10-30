@@ -1,5 +1,5 @@
 package cn.edu.cqu.cht.mapper;
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月2日 下午3:54:22
  * @version 1.0
@@ -13,7 +13,7 @@ public interface UserMapper {
 	/**
 	 * 通过id查询用户
 	 * 
-	 * @param id
+	 * @param userId
 	 * @return
 	 */
 	

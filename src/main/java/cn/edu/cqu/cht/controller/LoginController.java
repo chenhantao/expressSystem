@@ -1,5 +1,5 @@
 package cn.edu.cqu.cht.controller;
-/*
+/**
  * @author CHT
  * @date 创建时间：2018年5月13日 下午11:20:50
  * @version 1.0

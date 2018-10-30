@@ -67,7 +67,7 @@ public class UserController {
 	@RequestMapping("/sendexpress")
 	public String sendExpress(HttpServletRequest request,Model model) {
 		User user = (User) request.getSession().getAttribute("loginuser");
-		String senderAddr = new String();
+		String senderAddr;
 		if (request.getParameter("new_sender_addr") != null) {
 			senderAddr = request.getParameter("new_sender_addr");
 		} else {
@@ -82,26 +82,10 @@ public class UserController {
 		int num2 = 0;
 		String sAddr = request.getParameter("addr-show");
 		String rAddr = request.getParameter("addr-show2");
-		String temp = "";
-		for (int i = 0; i < sAddr.length(); i++) {
-			if (sAddr.charAt(i) != '-') {
-				temp += String.valueOf(sAddr.charAt(i));
-			} else {
-				strings1[num1] = temp;
-				num1++;
-				temp = "";
-			}
-		}
-		String temp2 = "";
-		for (int i = 0; i < rAddr.length(); i++) {
-			if (rAddr.charAt(i) != '-') {
-				temp2 += String.valueOf(rAddr.charAt(i));
-			} else {
-				strings2[num2] = temp2;
-				num2++;
-				temp2 = "";
-			}
-		}
+		StringBuilder temp = new StringBuilder();
+		mergerAddr(strings1, num1, sAddr, temp);
+		StringBuilder temp2 = new StringBuilder();
+		mergerAddr(strings2, num2, rAddr, temp2);
 
 		if (orderlistService.addOrder(orderId, user.getUserId(), request.getParameter("new_sender_name"),
 				request.getParameter("new_sender_phone"), strings1[0], strings1[1], strings1[2], senderAddr,
@@ -118,6 +102,18 @@ public class UserController {
 			return "base/error";
 		}
 
+	}
+
+	private void mergerAddr(String[] strings1, int num1, String sAddr, StringBuilder temp) {
+		for (int i = 0; i < sAddr.length(); i++) {
+			if (sAddr.charAt(i) != '-') {
+				temp.append(String.valueOf(sAddr.charAt(i)));
+			} else {
+				strings1[num1] = temp.toString();
+				num1++;
+				temp = new StringBuilder();
+			}
+		}
 	}
 
 	@RequestMapping("/afterpay")

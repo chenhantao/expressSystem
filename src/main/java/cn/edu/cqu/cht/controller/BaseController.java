@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.pagehelper.PageInfo;
 
+import cn.edu.cqu.cht.model.Kotlin;
 import cn.edu.cqu.cht.model.Orderlist;
+import cn.edu.cqu.cht.service.KotlinService;
 import cn.edu.cqu.cht.service.OrderlistService;
 
 /**
@@ -28,6 +30,8 @@ public class BaseController {
 	
 	@Autowired
 	private OrderlistService orderService;
+	@Autowired
+	private KotlinService kotlinService;
 	
 	@RequestMapping("/title")
 	public String title() {
@@ -79,7 +83,9 @@ public class BaseController {
 	}
 	
 	@RequestMapping(value="/aboutUs")
-	public String aboutUs() {
+	public String aboutUs(HttpServletRequest request) {
+		Kotlin kotlin = kotlinService.findById(1L);
+		request.getSession().setAttribute("kotlin",kotlin);
 		return "base/aboutUs";
 	}
 }

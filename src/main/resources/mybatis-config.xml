@@ -40,5 +40,6 @@
 		<mapper resource="cn/edu/cqu/cht/mapper/OrderlistMapper.xml" />
 		<mapper resource="cn/edu/cqu/cht/mapper/PlacePriceMapper.xml" />
 		<mapper resource="cn/edu/cqu/cht/mapper/UserMapper.xml" />
+		<mapper resource="cn/edu/cqu/cht/mapper/KotlinMapper.xml" />
 	</mappers>
 </configuration>

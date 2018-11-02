@@ -10,6 +10,7 @@ import com.github.pagehelper.PageHelper;
 import cn.edu.cqu.cht.function.MD5;
 import cn.edu.cqu.cht.mapper.BaseMapper;
 import cn.edu.cqu.cht.model.Base;
+import cn.edu.cqu.cht.model.Kotlin;
 
 /**
  * @author CHT
@@ -43,27 +44,28 @@ public class BaseServiceImpl implements BaseService {
 		if (account.equals("root")) {
 			return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
 		} else {
-			if (type.equals("u")) {
-				account = "u" + account;
-				if (baseMapper.selectByAccount(account) == null) {
-					return false;
-				} else {
-					return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
-				}
-			} else if (type.equals("c")) {
-				account = "c" + account;
-				if(baseMapper.selectByAccount(account)==null) {
-					return false;
-				}else {
-					return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
-				}
-			} else if (type.equals("s")) {
-				account = "s" + account;
-				if(baseMapper.selectByAccount(account)==null) {
-					return false;
-				}else {
-					return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
-				}
+			switch (type) {
+				case "u":
+					account = "u" + account;
+					if (baseMapper.selectByAccount(account) == null) {
+						return false;
+					} else {
+						return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
+					}
+				case "c":
+					account = "c" + account;
+					if (baseMapper.selectByAccount(account) == null) {
+						return false;
+					} else {
+						return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
+					}
+				case "s":
+					account = "s" + account;
+					if (baseMapper.selectByAccount(account) == null) {
+						return false;
+					} else {
+						return baseMapper.selectByAccount(account).getPassword().equals(MD5.getInstance().getMD5(password));
+					}
 			}
 		}
 		return false;
@@ -83,5 +85,4 @@ public class BaseServiceImpl implements BaseService {
 	public boolean deleteById(Integer id) {
 		return baseMapper.deleteById(id) == 1;
 	}
-
 }

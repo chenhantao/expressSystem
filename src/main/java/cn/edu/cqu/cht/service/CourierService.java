@@ -11,17 +11,17 @@ import cn.edu.cqu.cht.model.Courier;
 import cn.edu.cqu.cht.model.Orderlist;
 
 public interface CourierService {
-	public List<Courier> findAllCourier(int offset,int limit);
-	public Courier findByCourierId(Integer courierId);
-	public List<Courier> findByCourierName(String courierName);
-	public List<Courier> findCouriers(String province,String city,String area);
-	public List<Courier> findByStationId(Integer stationId);
+	List<Courier> findAllCourier(int offset, int limit);
+	Courier findByCourierId(Integer courierId);
+	List<Courier> findByCourierName(String courierName);
+	List<Courier> findCouriers(String province, String city, String area);
+	List<Courier> findByStationId(Integer stationId);
 	
-	public boolean addCourier(Courier courier);
+	boolean addCourier(Courier courier);
 	
-	public boolean updateCourier(Courier courier);
+	boolean updateCourier(Courier courier);
 	
-	public boolean deleteCourier(Integer courierId);
+	boolean deleteCourier(Integer courierId);
 
 	boolean addCourier(Integer courierId,String courierName,String courierPhone,String province,String city,String area);
 	

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
  * @since 2018/11/2
  */
 @Service
-class KotlinServiceImpl(@field:Autowired val kotlinMapper: KotlinMapper) : KotlinService {
+class KotlinServiceImpl(@Autowired private val kotlinMapper: KotlinMapper) : KotlinService {
 
     override fun findById(id: Long): Kotlin {
         return kotlinMapper.selectById(id)

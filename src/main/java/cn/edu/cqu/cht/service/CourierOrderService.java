@@ -10,13 +10,13 @@ import java.util.List;
 import cn.edu.cqu.cht.model.CourierOrder;
 
 public interface CourierOrderService {
-	public List<CourierOrder> findCourierOrderByCourierId(Integer courierId,int offset,int limit);
+	List<CourierOrder> findCourierOrderByCourierId(Integer courierId, int offset, int limit);
 	
-	public boolean addCourierOrder(CourierOrder courierOrder);
+	boolean addCourierOrder(CourierOrder courierOrder);
 	
-	public boolean updateCourierOrder(String orderId,Double salary);
+	boolean updateCourierOrder(String orderId, Double salary);
 	
-	public boolean delete(Integer courierId,Integer orderId);
+	boolean delete(Integer courierId, Integer orderId);
 	
 	int findByOrderIdNums(String orderId);
 }

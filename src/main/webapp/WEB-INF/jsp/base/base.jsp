@@ -38,6 +38,7 @@
 			<ul	class="nav navbar-nav">
 				<li class="active"><a href="${path}/base/index" target="_parent">首页</a></li>
 				<li><a href="${path }/base/aboutUs" target="base_down">关于我们</a></li>
+				<li><a href="${path}/kotlin/find" target="base_down">kotlin测试</a></li>
 			</ul>
 			<ul class="nav navbar-nav" style="float: right;">
 				<li class="active"><a href="${path }/base/login" target="_parent">登录</a></li>

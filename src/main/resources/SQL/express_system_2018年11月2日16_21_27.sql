@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地
-Source Server Version : 50718
+Source Server         : local
+Source Server Version : 50723
 Source Host           : localhost:3306
 Source Database       : express_system
 
 Target Server Type    : MYSQL
-Target Server Version : 50718
+Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-10-30 01:08:17
+Date: 2018-11-02 16:21:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `base`
+-- Table structure for base
 -- ----------------------------
 DROP TABLE IF EXISTS `base`;
 CREATE TABLE `base` (
@@ -60,7 +60,7 @@ INSERT INTO `base` VALUES ('29', 'cyuzhongqu', '25d55ad283aa400af464c76d713c07ad
 INSERT INTO `base` VALUES ('30', 'syanshikuaidizhan', '25d55ad283aa400af464c76d713c07ad');
 
 -- ----------------------------
--- Table structure for `courier`
+-- Table structure for courier
 -- ----------------------------
 DROP TABLE IF EXISTS `courier`;
 CREATE TABLE `courier` (
@@ -91,7 +91,7 @@ INSERT INTO `courier` VALUES ('28', '张三', '18034830302', '重庆市', '重�
 INSERT INTO `courier` VALUES ('29', '渝中区快递员', '13002020202', '重庆市', '重庆市', '渝中区', null, '21');
 
 -- ----------------------------
--- Table structure for `courier_order`
+-- Table structure for courier_order
 -- ----------------------------
 DROP TABLE IF EXISTS `courier_order`;
 CREATE TABLE `courier_order` (
@@ -116,7 +116,23 @@ INSERT INTO `courier_order` VALUES ('24', '20180523130213226433', '6.25', '1', '
 INSERT INTO `courier_order` VALUES ('26', '20180528135845313861', '3.00', '1', '2018-05-28 02:17:39');
 
 -- ----------------------------
--- Table structure for `orderlist`
+-- Table structure for kotlin
+-- ----------------------------
+DROP TABLE IF EXISTS `kotlin`;
+CREATE TABLE `kotlin` (
+  `id` bigint(20) NOT NULL,
+  `account` bigint(20) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of kotlin
+-- ----------------------------
+INSERT INTO `kotlin` VALUES ('1', '1', '1');
+
+-- ----------------------------
+-- Table structure for orderlist
 -- ----------------------------
 DROP TABLE IF EXISTS `orderlist`;
 CREATE TABLE `orderlist` (
@@ -166,7 +182,7 @@ INSERT INTO `orderlist` VALUES ('20180528135845313861', '8', '陈瀚涛', '18034
 INSERT INTO `orderlist` VALUES ('20180531151641969242', '8', '陈瀚涛', '18034830302', '重庆市', '重庆市', '沙坪坝区', '重庆大学A区', '王老师', '18034830302', '重庆市', '重庆市', '江北区', '重庆大学江北分区', '小件', '3.00', '14.00', '无', '快递员已取件-', '重庆市', '重庆市', '沙坪坝区', '重庆大学快递站', '陈瀚涛', '', '', '', '1', '0', '1', '2018-05-31 03:16:41');
 
 -- ----------------------------
--- Table structure for `place_price`
+-- Table structure for place_price
 -- ----------------------------
 DROP TABLE IF EXISTS `place_price`;
 CREATE TABLE `place_price` (
@@ -191,7 +207,7 @@ INSERT INTO `place_price` VALUES ('5', '四川省', '成都市', '温江区', '2
 INSERT INTO `place_price` VALUES ('6', '四川省', '攀枝花市', '东区', '2', '2', '1');
 
 -- ----------------------------
--- Table structure for `station`
+-- Table structure for station
 -- ----------------------------
 DROP TABLE IF EXISTS `station`;
 CREATE TABLE `station` (
@@ -222,7 +238,7 @@ INSERT INTO `station` VALUES ('25', '江北区快递站', '重庆市', '重庆�
 INSERT INTO `station` VALUES ('30', '演示的快递站', '辽宁省', '丹东市', '振安区', '演示地址', '负责人', '18034830302', '1');
 
 -- ----------------------------
--- Table structure for `station_order`
+-- Table structure for station_order
 -- ----------------------------
 DROP TABLE IF EXISTS `station_order`;
 CREATE TABLE `station_order` (
@@ -247,7 +263,7 @@ INSERT INTO `station_order` VALUES ('25', '20180522232750525479', '0.00', '0', '
 INSERT INTO `station_order` VALUES ('25', '20180528135845313861', '3.00', '1', '2018-05-28 02:08:03');
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -270,7 +286,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 INSERT INTO `user` VALUES ('2', null, null, null, null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('5', null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('8', 'chenhantao', '陈瀚涛', '18034830302', '372101345@qq.com', null, '重庆大学A区', '重庆大学aabd区', '重庆大学C区', '重庆大学江北分区');
+INSERT INTO `user` VALUES ('8', 'chenhantao', '陈瀚涛', '18034830302', '372101345@qq.com', null, '重庆大学A区', '重庆大学aabd区', '', '重庆大学江北分区');
 INSERT INTO `user` VALUES ('9', 'chenhantao', '陈瀚涛', '18034830302', '372101345@qq.com', null, '重庆大学A区', '重庆大学BBB区', '', null);
 INSERT INTO `user` VALUES ('10', null, null, null, null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('11', null, null, null, null, null, null, null, null, null);

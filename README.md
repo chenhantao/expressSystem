@@ -9,6 +9,7 @@ Spring+SpringMVC+mybatis
 后续如若条件允许，切换为springboot
 
 #### 安装教程
+因为采用了kotlin编写部分代码，因此，推荐idea打开
 idea配置好Tomcat后即可启动
 
 #### 使用说明

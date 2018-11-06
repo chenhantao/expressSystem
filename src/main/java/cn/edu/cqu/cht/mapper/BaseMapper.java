@@ -14,10 +14,10 @@ public interface BaseMapper {
 	 * @param id
 	 * @return
 	 */
-	
-	public Base selectById(Integer id);
-	public Base selectByAccount(String account);
-	public List<Base> selectAllBase();
+
+	Base selectById(Integer id);
+	Base selectByAccount(String account);
+	List<Base> selectAllBase();
 	
 
 	/**
@@ -25,22 +25,22 @@ public interface BaseMapper {
 	 * @param base
 	 * @return 
 	 */
-	public int insertBase(Base base);
+	int insertBase(Base base);
 	
 	/**
 	 * 返回主键的插入
 	 * @param base
 	 * @return 
 	 */
-	public int insertBase2(Base base);
+	int insertBase2(Base base);
 	
 	/**
 	 * 修改密码用
 	 * @param base
 	 * @return
 	 */
-	public int updateByAccount(Base base);
+	int updateByAccount(Base base);
 	
-	public int deleteById(Integer id);
+	int deleteById(Integer id);
 	
 }

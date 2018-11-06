@@ -8,17 +8,18 @@ package cn.edu.cqu.cht.service;
 import java.util.List;
 
 import cn.edu.cqu.cht.model.Base;
+import cn.edu.cqu.cht.model.Kotlin;
 
 public interface BaseService {
-	public Base findById(Integer id);
-	public Base findByAccount(String account);
-	public List<Base> findAllBase(int offset,int limit);
+	Base findById(Integer id);
+	Base findByAccount(String account);
+	List<Base> findAllBase(int offset, int limit);
 	
-	public boolean checkLogin(String account,String password,String type);
+	boolean checkLogin(String account, String password, String type);
 	
-	public boolean addNewBase(Base base);
+	boolean addNewBase(Base base);
 	
-	public boolean updatePassword(Base base);
+	boolean updatePassword(Base base);
 	
-	public boolean deleteById(Integer id);
+	boolean deleteById(Integer id);
 }

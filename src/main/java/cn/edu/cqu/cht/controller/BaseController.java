@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageInfo;
 
@@ -83,9 +84,10 @@ public class BaseController {
 	}
 	
 	@RequestMapping(value="/aboutUs")
-	public String aboutUs(HttpServletRequest request) {
+	public ModelAndView aboutUs(HttpServletRequest request) {
 		Kotlin kotlin = kotlinService.findById(1L);
 		request.getSession().setAttribute("kotlin",kotlin);
-		return "base/aboutUs";
+		//		return "base/aboutUs";
+		return new ModelAndView("base/aboutUs");
 	}
 }

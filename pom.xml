@@ -11,7 +11,7 @@
     <groupId>com.cht</groupId>
     <artifactId>expresssystem</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>expressSystem</name>
+    <name>expressSystem-parent</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -66,5 +66,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>expressSystem-dal</module>
+        <module>expressSystem-biz</module>
+        <module>expressSystem-common</module>
+        <module>expressSystem-web</module>
+    </modules>
 
 </project>
